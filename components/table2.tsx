@@ -74,6 +74,7 @@ const Table2 = (props: Props) => {
           <tbody>
 
           {data.map((dado: any, i) => (
+                // eslint-disable-next-line react/jsx-key
                 <tr>
                   <td>  {dado.id} </td>
                   <td> {dado.protocol}  </td>

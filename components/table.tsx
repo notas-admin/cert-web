@@ -206,6 +206,7 @@ const Table = (props: Props) => {
           <tbody>
 
           {data.map((dado: any, i) => (
+                // eslint-disable-next-line react/jsx-key
                 <tr>
                   {props.modo=="status61" && dado.status =="SAVED" && !!!notaStatus.includes(i) &&
                   <td>
@@ -227,14 +228,14 @@ const Table = (props: Props) => {
                   {props.modo=="status61" && dado.status !="SAVED" &&
                   <td>
                   </td>}
-                  <td> <a href={"/reversa/detail?mainAction="+props.mainAction+"&path="+props.servicePath+"&code="+dado.exchange_and_return_order_code} target="_blank">{dado.type} </a></td>
-                  <td> <a href={"/reversa/detail?mainAction="+props.mainAction+"&path="+props.servicePath+"&code="+dado.exchange_and_return_order_code} target="_blank"> {dado.exchange_and_return_order_code} </a></td>
-                  <td> <a href={"/reversa/detail?mainAction="+props.mainAction+"&path="+props.servicePath+"&code="+dado.exchange_and_return_order_code} target="_blank">{dado.original_order_code} </a> </td>
-                  <td> <a href={"/reversa/detail?mainAction="+props.mainAction+"&path="+props.servicePath+"&code="+dado.exchange_and_return_order_code} target="_blank">{numberFormat(dado.total_value)} </a></td>
-                  <td> <a href={"/reversa/detail?mainAction="+props.mainAction+"&path="+props.servicePath+"&code="+dado.exchange_and_return_order_code} target="_blank">{dado.fulfillment} </a></td>
-                  <td> <a href={"/reversa/detail?mainAction="+props.mainAction+"&path="+props.servicePath+"&code="+dado.exchange_and_return_order_code} target="_blank">{dado.order_date} </a></td>
-                  <td> <a href={"/reversa/detail?mainAction="+props.mainAction+"&path="+props.servicePath+"&code="+dado.exchange_and_return_order_code} target="_blank">{Moment(dado.created_at).format("DD/MM/YYYY HH:mm") }</a></td>
-                  <td> <a href={"/reversa/detail?mainAction="+props.mainAction+"&path="+props.servicePath+"&code="+dado.exchange_and_return_order_code} target="_blank">{dado.status}</a> </td>
+                  <td> <a href={"/reversa/detail?mainAction="+props.mainAction+"&path="+props.servicePath+"&code="+dado.exchange_and_return_order_code} target="_blank" rel="noreferrer">{dado.type} </a></td>
+                  <td> <a href={"/reversa/detail?mainAction="+props.mainAction+"&path="+props.servicePath+"&code="+dado.exchange_and_return_order_code} target="_blank" rel="noreferrer"> {dado.exchange_and_return_order_code} </a></td>
+                  <td> <a href={"/reversa/detail?mainAction="+props.mainAction+"&path="+props.servicePath+"&code="+dado.exchange_and_return_order_code} target="_blank" rel="noreferrer">{dado.original_order_code} </a> </td>
+                  <td> <a href={"/reversa/detail?mainAction="+props.mainAction+"&path="+props.servicePath+"&code="+dado.exchange_and_return_order_code} target="_blank" rel="noreferrer">{numberFormat(dado.total_value)} </a></td>
+                  <td> <a href={"/reversa/detail?mainAction="+props.mainAction+"&path="+props.servicePath+"&code="+dado.exchange_and_return_order_code} target="_blank" rel="noreferrer">{dado.fulfillment} </a></td>
+                  <td> <a href={"/reversa/detail?mainAction="+props.mainAction+"&path="+props.servicePath+"&code="+dado.exchange_and_return_order_code} target="_blank" rel="noreferrer">{dado.order_date} </a></td>
+                  <td> <a href={"/reversa/detail?mainAction="+props.mainAction+"&path="+props.servicePath+"&code="+dado.exchange_and_return_order_code} target="_blank" rel="noreferrer">{Moment(dado.created_at).format("DD/MM/YYYY HH:mm") }</a></td>
+                  <td> <a href={"/reversa/detail?mainAction="+props.mainAction+"&path="+props.servicePath+"&code="+dado.exchange_and_return_order_code} target="_blank" rel="noreferrer">{dado.status}</a> </td>
                 </tr>
           ))}
           </tbody>

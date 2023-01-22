@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-key */
 import Head from 'next/head';
 import MainHeader from '../components/header';
 import MainSidebar from '../components/sidebar';
