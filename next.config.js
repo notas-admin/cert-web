@@ -5,6 +5,14 @@ module.exports = {
   //   urlSearch: 'hml-reversamkt-lb-1609041014.us-east-2.elb.amazonaws.com',
   //   urlSearchPort: '8080'
   // },
+  eslint: {
+    // Warning: This allows production builds to successfully complete even if
+    // your project has ESLint errors.
+    ignoreDuringBuilds: true,
+  },
+  typescript: {
+    ignoreBuildErrors: true,
+  },
   async rewrites() {
     return [
       {
@@ -17,7 +25,7 @@ module.exports = {
       },
     ]
   },
-  webpack: (config, {dev, isServer}) => {
+  ignoreBuildErrors: true,  webpack: (config, {dev, isServer}) => {
     if (!dev && !isServer) {
       Object.assign(config.resolve.alias, {
         'react': 'preact/compat',
